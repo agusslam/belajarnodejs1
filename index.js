@@ -27,43 +27,61 @@
 
 
 ///////BELAJAR EXPRESS JS
-const express = require('express')
-const app = express()
+// const express = require('express')
+// const app = express()
 // const port = 3000
 
 //GET / akan diarahkan ke handler berikut
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
+// app.get('/', (req, res) => {
+//     res.send('Hello World')
+// })
 
 //GET /products akan diarahkan ke handleer ini
-app.get('/products', (req, res) => {
-     res.json(
-         [
-             "apple",
-             "mangga",
-             "rambutan"
-         ]
-     );
-})
+// app.get('/products', (req, res) => {
+//      res.json(
+//          [
+//              "apple",
+//              "mangga",
+//              "rambutan"
+//          ]
+//      );
+// })
 
 //GET /orders akan diarahkan ke handler ini
-app.get('/orders', (req,res) => {
-    res.json([
-        {
-            id:1,
-            paid:false,
-            user_id:1
-        },
-        {
-            id:2,
-            paid:false,
-            user_id:2
-        },
-    ])
+// app.get('/orders', (req,res) => {
+//     res.json([
+//         {
+//             id:1,
+//             paid:false,
+//             user_id:1
+//         },
+//         {
+//             id:2,
+//             paid:false,
+//             user_id:2
+//         },
+//     ])
+// })
+
+// app.listen(3000, () => {
+//     console.log(`Server started`);
+// });
+
+
+
+
+
+
+
+//COBA RESTFUL API
+const express = require('express')
+let posts = require('./db/posts.json')
+const app = express()
+
+app.get('/api/v1/posts', (req, res) => {
+    res.status(200).json(posts)
 })
 
 app.listen(3000, () => {
-    console.log(`Server started`);
-});
-
+    console.log('Server Oke di port 3000')
+})
