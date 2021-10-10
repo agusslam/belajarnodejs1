@@ -1,5 +1,5 @@
-const http = require("http")
-const fs = require("fs")
+// const http = require("http")
+// const fs = require("fs")
 
 // function onRequest(request, response){
 //     response.writeHead(200, { "Content-Type": "text/html" })
@@ -14,13 +14,24 @@ const fs = require("fs")
 // }
 
 //response json
-function onRequest(request, response){
-    response.writeHead(200, { "Content-Type" : "application/json"})
-    const data = {
-        name : "Yudi Kris",
-        age : 22
-    }
-    response.end(JSON.stringify(data))
-}
+// function onRequest(request, response){
+//     response.writeHead(200, { "Content-Type" : "application/json"})
+//     const data = {
+//         name : "Yudi Kris",
+//         age : 22
+//     }
+//     response.end(JSON.stringify(data))
+// }
 
-http.createServer(onRequest).listen(8000)
+// http.createServer(onRequest).listen(8000)
+
+
+///////BELAJAR EXPRESS JS
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World'))
+app.listen(port, () => {
+    console.log(`Server started on port:${port}`);
+});
