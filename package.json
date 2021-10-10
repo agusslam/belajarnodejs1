@@ -1,0 +1,12 @@
+{
+  "name": "latihan1",
+  "version": "1.0.0",
+  "description": "belajar nodejs pertama",
+  "main": "index.js",
+  "repository": "https://github.com/agusslam/belajarnodejs1.git",
+  "author": "agusslam",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}
