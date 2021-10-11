@@ -78,9 +78,18 @@ const express = require('express')
 let posts = require('./db/posts.json')
 const app = express()
 
+//GET ALL
 app.get('/api/v1/posts', (req, res) => {
     res.status(200).json(posts)
 })
+
+//GET BY ID
+app.get('/api/v1/posts/:id', (req, res) => {
+    const post = posts.find(i => i.id == +req.params.id)
+    res.status(200).json(post)
+})
+
+
 
 app.listen(3000, () => {
     console.log('Server Oke di port 3000')
