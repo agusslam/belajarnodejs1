@@ -47,23 +47,24 @@
 const http = require("http")
 const fs = require("fs")
 const express = require('express')
+const port = 8000
 const app = express()
 
 
-app.use('/public',express.static('public'));
+// app.use('/public',express.static('public'));
 
-app.use((request, response) => {
-    response.writeHead(200, { "Content-Type": "text/html" })
-    fs.readFile("./Views/index.html", null, (error, data) => {
-        if (error) {
-            response.writeHead(404)
-            response.write("file not found")
-        } else {
-            response.write(data)
-        } 
-        response.end()
-    })
-})
+// app.use((request, response) => {
+//     response.writeHead(200, { "Content-Type": "text/html" })
+//     fs.readFile("./Views/index.html", null, (error, data) => {
+//         if (error) {
+//             response.writeHead(404)
+//             response.write("file not found")
+//         } else {
+//             response.write(data)
+//         } 
+//         response.end()
+//     })
+// })
 
 // function onRequest(request, response){
 //     response.writeHead(200, { "Content-Type": "text/html" })
@@ -78,4 +79,30 @@ app.use((request, response) => {
 //     })
 // }
 
-http.createServer(app).listen(8000)
+// http.createServer(app).listen(8000)
+app.set('view engine', 'ejs')
+
+app.use('/public',express.static('public'));
+
+app.listen(port, () => {console.log(`Server ready on ${port}`)})
+
+//route
+app.get('/product', (req, res) => {
+    res.render('index')
+})
+
+app.get('/detaillatihan3:id', (req, res) => {
+    res.render('detaillatihan3')
+})
+
+app.get('/itunes', (req, res) => {
+    res.render('itunes')
+})
+
+app.get('/omdb', (req, res) => {
+    res.render('belajaromdb2')
+})
+
+app.get('/detailomdb:id', (req, res) => {
+    res.render('detailomdb')
+})

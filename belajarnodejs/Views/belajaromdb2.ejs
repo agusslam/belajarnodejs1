@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar HTML dan Javascript</title>
-    <link rel="stylesheet" href="/plugin/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/plugin/fontawesome/css/all.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <title>OMDB API</title>
+    <link rel="stylesheet" href="public/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/omdb.css">
 </head>
-<body onload="latihan3()">
+<body onload="omdb2()">
     <div id="navbar">
         <div class="logo-white">
             <a href="latihancss2.html">LOGO</a>
@@ -39,8 +38,8 @@
                 </div>
                 <div class="box-text-banner position-absolute top-50 start-50 translate-middle">
                     <div class="text-center">
-                        <h1 class="art tittle-h1-banner">ART OF PLANT</h1>
-                        <h5 class="description-p-banner">ALL ABOUT ART OF NATURE</h5>
+                        <h1 class="art tittle-h1-banner"></h1>
+                        <h5 class="description-p-banner"></h5>
                     </div>
                 </div>
             </div>
@@ -48,9 +47,15 @@
         <div class="product-list-new">
             <div class="row product-list-new mt-3" id="articles">
                 <div class="col-12 text-articles">
-                        <h6 class="text-center">Products</h6>
+                        <h6 class="text-center">Movie List</h6>
                 </div>
-                <div class="row wrapper-box-new">
+                <div class="search-movie">
+                    <form>
+                        <input type="text" id="search" class="search-input search border-padding" placeholder="Input Movie">
+                        <button type="button" id="searchAgain" class="btn btn-primary">Cari</button>
+                    </form>
+                </div>
+                <div class="row wrapper-box-omdb">
                 </div>                
                 <div class="pagi">
                     <ul class="ulpaging">
@@ -69,8 +74,7 @@
             </ul>
         </div>
     </div>
-    <script type="text/javascript" src="/plugin/bootstrap/js/bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="/js/data.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+
+    <script type="text/javascript" src="public/js/scriptomdb.js"></script> 
 </body>
 </html>
